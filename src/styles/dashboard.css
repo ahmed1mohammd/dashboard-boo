@@ -363,32 +363,54 @@ input, select, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background-color: #ffffff;
-  color: var(--text-main);
-  transition: all 0.2s ease;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  font-weight: 600;
+  transition: all 0.18s ease;
   cursor: pointer;
 }
 
-.action-btn:hover {
-  background-color: var(--bg-alt);
-  color: var(--primary);
-  border-color: var(--primary);
+/* Edit button — blue by default */
+.action-btn.edit-btn {
+  background-color: #EFF6FF;
+  color: #2563EB;
+  border-color: #BFDBFE;
 }
 
 .action-btn.edit-btn:hover {
-  color: var(--primary);
-  border-color: var(--primary);
-  background-color: #E1F3FA;
+  background-color: #2563EB;
+  color: #ffffff;
+  border-color: #2563EB;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+}
+
+/* Delete button — red by default */
+.action-btn.delete-btn {
+  background-color: #FEF2F2;
+  color: #DC2626;
+  border-color: #FECACA;
 }
 
 .action-btn.delete-btn:hover {
-  color: #EF4444;
-  border-color: #FCA5A5;
-  background-color: #FEE2E2;
+  background-color: #DC2626;
+  color: #ffffff;
+  border-color: #DC2626;
+  box-shadow: 0 2px 8px rgba(220,38,38,0.25);
+}
+
+/* Generic action-btn fallback */
+.action-btn:not(.edit-btn):not(.delete-btn) {
+  background-color: #F8FAFC;
+  color: var(--text-main);
+  border-color: var(--border);
+}
+
+.action-btn:not(.edit-btn):not(.delete-btn):hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
 }
 
 /* ========================================================
