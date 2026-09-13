@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   DollarSign,
   ShoppingBag,
-  Car,
+  Package,
   Cog,
   CalendarCheck,
   Mail,
@@ -24,7 +24,7 @@ export default function DashboardHome() {
     lowStockParts: []
   });
   const [counts, setCounts] = useState({
-    cars: 0,
+    accessories: 0,
     parts: 0,
     bookings: 0,
     messages: 0
@@ -35,9 +35,9 @@ export default function DashboardHome() {
     const loadOverview = async () => {
       try {
         setLoading(true);
-        const [statsRes, carsRes, partsRes, bookingsRes, messagesRes] = await Promise.all([
+        const [statsRes, accRes, partsRes, bookingsRes, messagesRes] = await Promise.all([
           adminApi.getStats(),
-          adminApi.getCars({ limit: 1 }),
+          adminApi.getAccessories({ limit: 1 }),
           adminApi.getSpareParts({ limit: 1 }),
           adminApi.getBookings({ limit: 1 }),
           adminApi.getMessages({ limit: 1 })
@@ -45,7 +45,7 @@ export default function DashboardHome() {
 
         if (statsRes.success) setStats(statsRes.data);
         setCounts({
-          cars: carsRes.pagination?.total || 0,
+          accessories: accRes.pagination?.total || 0,
           parts: partsRes.pagination?.total || 0,
           bookings: bookingsRes.pagination?.total || 0,
           messages: messagesRes.pagination?.unreadCount || 0
@@ -92,17 +92,17 @@ export default function DashboardHome() {
           </div>
         </div>
 
-        {/* Active Vehicles */}
+        {/* Accessories */}
         <div className="admin-kpi-card">
           <div>
-            <span className="kpi-title">Showroom Vehicles</span>
-            <div className="kpi-value">{counts.cars}</div>
-            <Link to="/cars" style={{ fontSize: '0.75rem', color: 'var(--primary)', fontWeight: '700' }}>
-              Manage Inventory &rarr;
+            <span className="kpi-title">Accessories</span>
+            <div className="kpi-value">{counts.accessories}</div>
+            <Link to="/accessories" style={{ fontSize: '0.75rem', color: 'var(--primary)', fontWeight: '700' }}>
+              Manage Accessories &rarr;
             </Link>
           </div>
           <div className="kpi-icon-box" style={{ backgroundColor: 'var(--bg-alt)', color: 'var(--text-main)' }}>
-            <Car size={26} />
+            <Package size={26} />
           </div>
         </div>
 
@@ -223,7 +223,7 @@ export default function DashboardHome() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
             <Link
-              to="/cars"
+              to="/accessories"
               style={{
                 padding: '1.25rem',
                 border: '1px solid var(--border)',
@@ -234,9 +234,9 @@ export default function DashboardHome() {
                 gap: '0.35rem'
               }}
             >
-              <Car size={22} color="var(--primary)" />
-              <strong style={{ color: 'var(--heading)' }}>Cars Inventory</strong>
-              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Add/edit showroom cars</span>
+              <Package size={22} color="var(--primary)" />
+              <strong style={{ color: 'var(--heading)' }}>Accessories Store</strong>
+              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Add/edit car accessories</span>
             </Link>
 
             <Link

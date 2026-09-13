@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
-  Car,
+  Package,
   Cog,
   Layers,
   Wrench,
@@ -21,7 +21,7 @@ export default function AdminSidebar() {
 
   const navItems = [
     { name: 'Dashboard', path: '/', icon: LayoutDashboard },
-    { name: 'Cars (Vehicles)', path: '/cars', icon: Car },
+    { name: 'Accessories', path: '/accessories', icon: Package },
     { name: 'Spare Parts', path: '/spare-parts', icon: Cog },
     { name: 'Categories', path: '/categories', icon: Layers },
     { name: 'Maintenance Services', path: '/maintenance', icon: Wrench },

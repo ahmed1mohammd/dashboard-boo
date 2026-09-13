@@ -41,12 +41,12 @@ export const adminApi = {
   // Dashboard Overview KPIs
   getStats: () => api.get('/orders/stats/overview'),
 
-  // Cars (Vehicles)
-  getCars: (params) => api.get('/cars', { params }),
-  getCar: (id) => api.get(`/cars/${id}`),
-  createCar: (formData) => api.post('/cars', formData),
-  updateCar: (id, formData) => api.put(`/cars/${id}`, formData),
-  deleteCar: (id) => api.delete(`/cars/${id}`),
+  // Accessories
+  getAccessories: (params) => api.get('/accessories', { params }),
+  getAccessory: (id) => api.get(`/accessories/${id}`),
+  createAccessory: (formData) => api.post('/accessories', formData),
+  updateAccessory: (id, formData) => api.put(`/accessories/${id}`, formData),
+  deleteAccessory: (id) => api.delete(`/accessories/${id}`),
 
   // Spare Parts
   getSpareParts: (params) => api.get('/products', { params }),

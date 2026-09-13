@@ -4,7 +4,7 @@ import { useAuth } from './context/AuthContext';
 import AdminLayout from './components/Layout/AdminLayout';
 import Login from './pages/Login';
 import DashboardHome from './pages/DashboardHome';
-import CarsManager from './pages/CarsManager';
+import AccessoriesManager from './pages/AccessoriesManager';
 import SparePartsManager from './pages/SparePartsManager';
 import CategoriesManager from './pages/CategoriesManager';
 import MaintenanceManager from './pages/MaintenanceManager';
@@ -51,7 +51,7 @@ export default function App() {
         }
       >
         <Route index element={<DashboardHome />} />
-        <Route path="cars" element={<CarsManager />} />
+        <Route path="accessories" element={<AccessoriesManager />} />
         <Route path="spare-parts" element={<SparePartsManager />} />
         <Route path="categories" element={<CategoriesManager />} />
         <Route path="maintenance" element={<MaintenanceManager />} />

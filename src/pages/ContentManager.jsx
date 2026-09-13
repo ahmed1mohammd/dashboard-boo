@@ -14,12 +14,12 @@ export default function ContentManager() {
     about: {
       label: 'ABOUT BOO',
       heading: 'Your Trusted Automotive Partner',
-      description: 'BOO provides integrated automotive solutions including car import, vehicle sales, spare parts and professional maintenance.',
+      description: 'BOO provides integrated automotive solutions including genuine spare parts, premium car accessories, and certified maintenance.',
       secondaryText: 'Founded on principles of precision, transparency, and technical excellence.',
       image: { url: '', publicId: '' },
       stats: [
         { value: '10+', label: 'Years Experience' },
-        { value: '500+', label: 'Cars Delivered' },
+        { value: '1,000+', label: 'Accessories & Upgrades' },
         { value: '5,000+', label: 'OEM Parts in Stock' },
         { value: '98%', label: 'Customer Satisfaction' }
       ]
@@ -42,7 +42,7 @@ export default function ContentManager() {
       }
     },
     whyBoo: [
-      { id: 'import', title: 'Car Import Excellence', description: 'Direct vehicle imports from European & Gulf markets with complete vehicle inspection history.', icon: 'ShieldCheck' },
+      { id: 'accessories', title: 'Car Accessories', description: 'Extensive inventory of verified styling, electronics, and protection accessories.', icon: 'Package' },
       { id: 'oem', title: '100% Genuine OEM Parts', description: 'Extensive inventory of verified OEM parts with warranty protection.', icon: 'Cpu' },
       { id: 'tech', title: 'Advanced Diagnostics', description: 'Master certified technicians using manufacturer-grade computerized diagnostic tools.', icon: 'Wrench' },
       { id: 'support', title: 'Dedicated Support', description: 'End-to-end customer support with transparent pricing and warranty fulfillment.', icon: 'Sparkles' }
